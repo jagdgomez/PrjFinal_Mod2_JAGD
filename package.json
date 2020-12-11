@@ -1,0 +1,19 @@
+{
+  "name": "prjfinal_mod2_jagd",
+  "version": "1.0.0",
+  "description": "Projecto Final Modulo 2",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jagdgomez/PrjFinal_Mod2_JAGD.git"
+  },
+  "author": "Johnny Gomez Duran",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jagdgomez/PrjFinal_Mod2_JAGD/issues"
+  },
+  "homepage": "https://github.com/jagdgomez/PrjFinal_Mod2_JAGD#readme"
+}
