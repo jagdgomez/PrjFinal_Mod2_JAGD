@@ -17,15 +17,28 @@ exports.config = {
     // directory is where your package.json resides, so `wdio` will be called from there.
     //
     specs: [
-        './test/specs/**/*.js'
-       // './test/specs/**/SearchPage.e2e.js'
-       // './test/specs/**/HomePage.e2e.js'
+         './test/specs/**/*.js'
+        //'./test/specs/**/HomePage.e2e.js'
+        //'./test/specs/**/SearchPage.e2e.js'
+        //'./test/specs/**/ProfilePage.e2e.js'
        
     ],
     // Patterns to exclude.
     exclude: [
+        //'./test/specs/**/HomePage.e2e.js'
         // 'path/to/excluded/files'
     ],
+    // suites: {
+    //     homepage: [
+    //         './test/specs/**/HomePage.e2e.js'
+    //     ],
+    //     profilepage: [
+    //         './test/specs/**/SearchPage.e2e.js'
+    //     ],
+    //     searchpage: [
+    //         './test/specs/**/ProfilePage.e2e.js'
+    //     ]
+    // },
     //
     // ============
     // Capabilities
@@ -42,7 +55,7 @@ exports.config = {
     // and 30 processes will get spawned. The property handles how many capabilities
     // from the same test should run tests.
     //
-    maxInstances: 10,
+    maxInstances: 1,
     //
     // If you have trouble getting all important capabilities together, check out the
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
@@ -69,7 +82,7 @@ exports.config = {
     // Define all options that are relevant for the WebdriverIO instance here
     //
     // Level of logging verbosity: trace | debug | info | warn | error | silent
-    logLevel: 'debug',
+    logLevel: 'error',
     //
     // Set specific log levels per logger
     // loggers:
@@ -109,7 +122,7 @@ exports.config = {
     // Services take over a specific job you don't want to take care of. They enhance
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
-    services: ['chromedriver'],
+    services: ['chromedriver','intercept'],
     
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
