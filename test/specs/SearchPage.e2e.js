@@ -5,27 +5,30 @@ const searchPage = require('../pageobjects/search.page');
 
 describe('Pagina de Resultados de Busqueda', () => {
 
-    beforeEach (() =>{
-        //browser.reloadSession();
-        SearchPage.open();
-
+    before (() =>{
+       browser.reloadSession();
+       SearchPage.open();
     })
         
     it ('Validacion de Filtros- Click en especialidad "Fisica"', () => {
-        let SpecDetls = SpecialityBtnLbls()
-        SearchPage.SpecialityButton(SpecDetls.phisicalBtnLbl).click();
+        let SpecialityLbls = SpecialityBtnLbls()
+        SearchPage.SpecialityButton(SpecialityLbls.phisicalBtnLbl).waitForClickable({ timeout: 10000 });
+        SearchPage.SpecialityButton(SpecialityLbls.phisicalBtnLbl).click();
         expect(browser).toHaveUrlContaining(searchPage.PhisicalSpecialityURL);
     });
 
     it ('Validacion de Filtros- Click en especialidad "Lenguage"', () => {
-        let SpecDetls = SpecialityBtnLbls()
-        SearchPage.SpecialityButton(SpecDetls.languageBtnLbl).click();
+        let SpecialityLbls = SpecialityBtnLbls()
+        SearchPage.SpecialityButton(SpecialityLbls.languageBtnLbl).waitForClickable({ timeout: 10000 });
+        SearchPage.SpecialityButton(SpecialityLbls.languageBtnLbl).click();
+        
         expect(browser).toHaveUrlContaining(searchPage.LanguageSpecialityURL);
     });
 
     it ('Validacion de Filtros- Click en especialidad "Ocupacional"', () => {
-        let SpecDetls = SpecialityBtnLbls()
-        SearchPage.SpecialityButton(SpecDetls.ocupationalBtnLbl).click();
+        let SpecialityLbls = SpecialityBtnLbls()
+        SearchPage.SpecialityButton(SpecialityLbls.ocupationalBtnLbl).click();
+        SearchPage.SpecialityButton(SpecialityLbls.ocupationalBtnLbl).waitForClickable({ timeout: 10000 });
         expect(browser).toHaveUrlContaining(searchPage.OcupationalSpecialityURL);
     });
 
