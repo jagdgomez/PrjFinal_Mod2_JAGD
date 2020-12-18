@@ -1,17 +1,30 @@
 const Page = require('./page');
 
-
 /**
  * sub page containing specific selectors and methods for a specific page
  */
 class SearchPage extends Page {
 
+    /* Search Page url */
     SearchPageUrl = 'search'
+    
+    /* Phisical speciality url  */
     PhisicalSpecialityURL='sp=phisical'
+    
+    /* Language speciality url  */
     LanguageSpecialityURL='sp=language'
+
+    /* Ocupational speciality url  */
     OcupationalSpecialityURL='sp=ocupational'
+
+    /* speciality button locator */
     specialityPlaceHolder = '//a[text()="[SpecialityName]"]'
+    
+    /* Expected url for user search */
     testUserUrl = 'https://develop.terapeutica.digital/#/search?sp=all&q=Maria'
+    
+    /* Expected Label for user search */
+    lblResultForTestUser  = 'Mostrando 1 de 1 resultados'
 
     /**
      * define selectors using getter methods-- switch-field, a.selected 
@@ -33,6 +46,12 @@ class SearchPage extends Page {
     SpecialityButton (Speciality) {
          return $(this.specialityPlaceHolder.replace('[SpecialityName]',Speciality))
     }
+
+    ClickSpecialityButton(BtnName){
+     this.SpecialityButton(BtnName).waitForClickable({ timeout: 10000 });
+     this.SpecialityButton(BtnName).click();
+    }
+
     //Add Input text and search  
     SearchText (TextToSearch) {
         this.inputSearchTextbox.click();
@@ -45,6 +64,12 @@ class SearchPage extends Page {
         this.btnToggleMapOrList.waitForClickable({ timeout: 5000 }); 
         this.btnToggleMapOrList.click();
     }
+
+    ClickGotoProfileBtn () {
+        this.btnGoToProfile.waitForClickable({ timeout: 5000 });
+        this.btnGoToProfile.click();
+    }
+
 
      /**
      * overwrite specifc options to adapt it to page object
