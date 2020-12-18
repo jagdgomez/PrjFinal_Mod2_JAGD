@@ -15,6 +15,21 @@ class HomePage extends Page {
     get lblOcupationalSpeciality () { return $('label[for=ocupational]')};
     
     /**
+     * Expected Info for testing
+     * e.g. Expected url for empty search 
+     */
+
+     /**
+     *Expected url for empty search 
+     */
+
+    EmptySearchUrl= 'https://develop.terapeutica.digital/#/'
+    /**
+     *Expected Place Holder Value at Click on any Speciality 
+     */
+    ExpectedPlaceHolderValue = '¿Buscas a alguien o algo en específico?'
+
+    /**
      * a method to encapsule automation code to interact with the page
      * e.g. to login using username and password
      */
@@ -23,7 +38,7 @@ class HomePage extends Page {
     SearchText (TextToSearch) {
         this.inputSearchTextbox.click();
         this.inputSearchTextbox.setValue(TextToSearch);
-        this.btnSearch.waitForClickable({ timeout: 5000 });
+        this.btnSearch.waitForClickable({ timeout: 10000 });
         this.btnSearch.click(); 
     }
     //Click on any Speciality Container 
